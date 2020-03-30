@@ -1,0 +1,18 @@
+<%- include('partials/header.ejs') %>
+
+        <h1> Pixabay Search (Express Version) </h1>
+        
+        <form action="/results" method="GET">
+            
+            Keyword: <input type="text" name="keyword"><br>
+            Orientation: <select id="position" name="verticalHorizontal">
+        		<option value="">Select one</option>
+    	   		<option value="vertical">Vertical</option>
+    	    	<option value="horizontal">Horizontal</option>
+    	    	</select>
+            <button> Search </button>
+        <hr />
+            
+        </form> <br>
+        
+<%- include('partials/footer.ejs') %>

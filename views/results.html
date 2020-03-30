@@ -1,0 +1,34 @@
+<%- include('partials/header.ejs') %>
+
+        <h1> Pixabay Search Results </h1>
+        
+        <form action="/results">
+            
+            Keyword: <input type="text" name="keyword"><br>
+            Orientation: <select id="position" name="verticalHorizontal">
+        		<option value="">Select one</option>
+        	   	<option value="vertical">Vertical</option>
+        	   	<option value="horizontal">Horizontal</option>
+        	  	</select>
+            <button> Search </button>
+        <hr />
+            
+        </form> <br>
+        
+         
+         <% if (orientation == 'vertical' ){ %>
+             <div class="flex-item"><h3> Likes: <%= images.hits[0].likes %> </h3><br><img id="vertical" hspace="4" src='<%= images.hits[0].largeImageURL %>' ></div>
+             <div class="flex-item"><h3> Likes: <%= images.hits[1].likes %> </h3><br><img id="vertical" hspace="4" src='<%= images.hits[1].largeImageURL %>' ></div>
+             <div class="flex-item"><h3> Likes: <%= images.hits[2].likes %> </h3><br><img id="vertical" hspace="4" src='<%= images.hits[2].largeImageURL %>' ></div>
+             <div class="flex-item"><h3> Likes: <%= images.hits[3].likes %> </h3><br><img id="vertical" hspace="4" src='<%= images.hits[3].largeImageURL %>' ></div>
+         <% }else{ %>
+             <p> Likes: <%= images.hits[0].likes %> Likes: <%= images.hits[1].likes %> Likes: <%= images.hits[2].likes %> Likes: <%= images.hits[3].likes %> </p>
+             <img src='<%= images.hits[0].largeImageURL %>' width='250' height='300'>
+             <img src='<%= images.hits[1].largeImageURL %>' width='250' height='300'>
+             <img src='<%= images.hits[2].largeImageURL %>' width='250' height='300'>
+             <img src='<%= images.hits[3].largeImageURL %>' width='250' height='300'>
+         <% } %>
+        
+        
+        
+<%- include('partials/footer.ejs') %>
